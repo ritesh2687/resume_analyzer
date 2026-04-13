@@ -1,0 +1,422 @@
+/* ============================================================
+   RESUME ANALYZER — Global Styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Tokens ── */
+:root {
+  /* Colors */
+  --text:           #6b6375;
+  --text-h:         #08060d;
+  --text-muted:     #9ca3af;
+  --bg:             #ffffff;
+  --bg-subtle:      #faf9fb;
+  --border:         #e5e4e7;
+  --border-subtle:  rgba(229, 228, 231, 0.6);
+  --code-bg:        #f4f3ec;
+
+  /* Accent */
+  --accent:         #aa3bff;
+  --accent-dim:     #c084fc;
+  --accent-bg:      rgba(170, 59, 255, 0.08);
+  --accent-border:  rgba(170, 59, 255, 0.35);
+
+  /* Status */
+  --success:        #16a34a;
+  --success-bg:     rgba(22, 163, 74, 0.08);
+  --warning:        #d97706;
+  --warning-bg:     rgba(217, 119, 6, 0.08);
+  --danger:         #dc2626;
+  --danger-bg:      rgba(220, 38, 38, 0.08);
+
+  /* Surfaces */
+  --surface:        #ffffff;
+  --surface-raised: #f9f8fc;
+  --social-bg:      rgba(244, 243, 236, 0.5);
+  --overlay:        rgba(8, 6, 13, 0.04);
+
+  /* Shadow */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:      0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+  --shadow-lg:      0 25px 50px -12px rgba(0,0,0,0.12);
+  --shadow-accent:  0 8px 24px rgba(170, 59, 255, 0.18);
+
+  /* Typography */
+  --sans:    'DM Sans', system-ui, sans-serif;
+  --heading: 'DM Serif Display', Georgia, serif;
+  --mono:    'DM Mono', ui-monospace, Consolas, monospace;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radii */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:   cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 350ms;
+
+  /* Layout */
+  --max-width: 1126px;
+
+  /* Base typography */
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+}
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text:           #9ca3af;
+    --text-h:         #f3f4f6;
+    --text-muted:     #6b7280;
+    --bg:             #16171d;
+    --bg-subtle:      #1a1b23;
+    --border:         #2e303a;
+    --border-subtle:  rgba(46, 48, 58, 0.6);
+    --code-bg:        #1f2028;
+
+    --accent:         #c084fc;
+    --accent-dim:     #a855f7;
+    --accent-bg:      rgba(192, 132, 252, 0.1);
+    --accent-border:  rgba(192, 132, 252, 0.35);
+
+    --success:        #4ade80;
+    --success-bg:     rgba(74, 222, 128, 0.08);
+    --warning:        #fbbf24;
+    --warning-bg:     rgba(251, 191, 36, 0.08);
+    --danger:         #f87171;
+    --danger-bg:      rgba(248, 113, 113, 0.08);
+
+    --surface:        #1e1f27;
+    --surface-raised: #24252f;
+    --social-bg:      rgba(47, 48, 58, 0.5);
+    --overlay:        rgba(255, 255, 255, 0.03);
+
+    --shadow-sm:      0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md:      0 10px 15px -3px rgba(0,0,0,0.35), 0 4px 6px -2px rgba(0,0,0,0.2);
+    --shadow-lg:      0 25px 50px -12px rgba(0,0,0,0.5);
+    --shadow-accent:  0 8px 24px rgba(192, 132, 252, 0.2);
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+/* ── Responsive Font Scaling ── */
+@media (max-width: 1024px) {
+  :root { font-size: 16px; }
+}
+@media (max-width: 640px) {
+  :root { font-size: 15px; }
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ── Layout Root ── */
+#root {
+  width: var(--max-width);
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--duration-base) var(--ease);
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+h1, h2, h3, h4 {
+  font-family: var(--heading);
+  font-weight: 400;
+  color: var(--text-h);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: var(--space-8) 0;
+}
+
+h2 {
+  font-size: clamp(20px, 3vw, 24px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-2);
+}
+
+h3 {
+  font-size: 16px;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease),
+              opacity var(--duration-fast) var(--ease);
+}
+a:hover {
+  color: var(--accent-dim);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* ============================================================
+   Code & Mono
+   ============================================================ */
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: var(--radius-sm);
+  color: var(--text-h);
+}
+
+code {
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 3px 8px;
+  background: var(--code-bg);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+pre {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  overflow-x: auto;
+  line-height: 1.6;
+  color: var(--text-h);
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: pre;
+  font-size: inherit;
+}
+
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+
+/* Visually hidden (accessible) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Tag / badge pills */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  transition: transform var(--duration-fast) var(--ease-spring),
+              box-shadow var(--duration-fast) var(--ease);
+}
+.tag:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tag-default { background: var(--overlay);    color: var(--text);    border-color: var(--border); }
+.tag-accent  { background: var(--accent-bg);  color: var(--accent);  border-color: var(--accent-border); }
+.tag-success { background: var(--success-bg); color: var(--success); border-color: transparent; }
+.tag-danger  { background: var(--danger-bg);  color: var(--danger);  border-color: transparent; }
+
+/* Surface card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-base) var(--ease),
+              transform var(--duration-base) var(--ease-spring);
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: var(--space-6) 0;
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.animate-fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+.animate-fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+}
+
+/* Stagger helpers */
+.stagger-1 { animation-delay: 60ms;  }
+.stagger-2 { animation-delay: 120ms; }
+.stagger-3 { animation-delay: 180ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 300ms; }
+
+/* Skeleton loading shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--overlay) 25%,
+    var(--border-subtle) 50%,
+    var(--overlay) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   Scrollbar (Webkit)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ============================================================
+   Focus Styles (Accessibility)
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   Selection
+   ============================================================ */
+
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
