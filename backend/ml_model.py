@@ -6,7 +6,7 @@ SKILLS_DB = [
     "python",
     "java",
     "machine learning",
-    "sql
+    "sql",
     "react",
     "fastapi",
     "django",
